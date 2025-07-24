@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Metrics Pro | Professional Health & BMI Calculator</title>
+    <meta
+      name="description"
+      content="Professional health metrics calculator with BMI, body fat percentage, and personalized health recommendations."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <nav class="navbar">
+        <div class="logo">
+          <i class="fas fa-heartbeat"></i>
+          <span>Health Metrics Pro</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#calculator">Calculator</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content animate__animated animate__fadeIn">
+        <h1>Your Health Journey Starts Here</h1>
+        <p>Professional health metrics and personalized wellness insights</p>
+        <div class="hero-buttons">
+          <a href="#calculator" class="btn btn-primary">Calculate Now</a>
+          <a href="#about" class="btn btn-secondary">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <i class="fas fa-users"></i>
+          <span class="stat-number">10K+</span>
+          <span class="stat-label">Active Users</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-calculator"></i>
+          <span class="stat-number">50K+</span>
+          <span class="stat-label">Calculations</span>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-star"></i>
+          <span class="stat-number">4.9</span>
+          <span class="stat-label">User Rating</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section id="calculator" class="calculator-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Professional BMI Calculator</h2>
+            <p>Get accurate health metrics and personalized recommendations</p>
+          </div>
+          <div class="calculator">
+            <div class="calculator-tabs">
+              <button class="tab-btn active" data-tab="bmi">
+                BMI Calculator
+              </button>
+              <button class="tab-btn" data-tab="ideal-weight">
+                Ideal Weight
+              </button>
+            </div>
+
+            <div class="tab-content active" id="bmi-tab">
+              <div class="input-section">
+                <div class="input-group">
+                  <label for="height">
+                    <i class="fas fa-ruler-vertical"></i>
+                    Height (cm)
+                  </label>
+                  <input
+                    type="number"
+                    id="height"
+                    placeholder="Enter your height"
+                    min="0"
+                    step="0.1"
+                  />
+                  <span class="input-hint">Enter height in centimeters</span>
+                </div>
+
+                <div class="input-group">
+                  <label for="weight">
+                    <i class="fas fa-weight"></i>
+                    Weight (kg)
+                  </label>
+                  <input
+                    type="number"
+                    id="weight"
+                    placeholder="Enter your weight"
+                    min="0"
+                    step="0.1"
+                  />
+                  <span class="input-hint">Enter weight in kilograms</span>
+                </div>
+              </div>
+
+              <button id="calculate-bmi" class="btn btn-primary">
+                <i class="fas fa-calculator"></i>
+                Calculate BMI
+              </button>
+
+              <div class="result" id="bmi-result">
+                <div class="bmi-value">
+                  <span id="bmi-number">--</span>
+                  <span class="bmi-label">BMI</span>
+                </div>
+                <div class="bmi-category" id="bmi-category">
+                  <span>Category</span>
+                </div>
+                <div class="bmi-info" id="bmi-info">
+                  <p>Enter your measurements to calculate your BMI</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-content" id="ideal-weight-tab">
+              <div class="input-section">
+                <div class="input-group">
+                  <label for="ideal-gender">
+                    <i class="fas fa-venus-mars"></i>
+                    Gender
+                  </label>
+                  <select id="ideal-gender" class="form-select">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+
+                <div class="input-group">
+                  <label for="ideal-height">
+                    <i class="fas fa-ruler-vertical"></i>
+                    Height (cm)
+                  </label>
+                  <input
+                    type="number"
+                    id="ideal-height"
+                    placeholder="Enter your height"
+                    min="0"
+                    step="0.1"
+                  />
+                  <span class="input-hint">Enter height in centimeters</span>
+                </div>
+
+                <div class="input-group">
+                  <label for="frame-size">
+                    <i class="fas fa-user"></i>
+                    Body Frame Size
+                  </label>
+                  <select id="frame-size" class="form-select">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                  </select>
+                  <span class="input-hint">Select your body frame size</span>
+                </div>
+              </div>
+
+              <button id="calculate-ideal-weight" class="btn btn-primary">
+                <i class="fas fa-calculator"></i>
+                Calculate Ideal Weight
+              </button>
+
+              <div class="result" id="ideal-weight-result">
+                <div class="bmi-value">
+                  <span id="ideal-weight-number">--</span>
+                  <span class="bmi-label">kg</span>
+                </div>
+                <div class="bmi-category" id="ideal-weight-range">
+                  <span>Weight Range</span>
+                </div>
+                <div class="bmi-info" id="ideal-weight-info">
+                  <p>Enter your measurements to calculate your ideal weight</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="bmi-scale">
+              <div class="scale-item">
+                <span class="scale-color underweight"></span>
+                <span>Underweight</span>
+                <span class="scale-range">&lt; 18.5</span>
+              </div>
+              <div class="scale-item">
+                <span class="scale-color normal"></span>
+                <span>Normal</span>
+                <span class="scale-range">18.5 - 24.9</span>
+              </div>
+              <div class="scale-item">
+                <span class="scale-color overweight"></span>
+                <span>Overweight</span>
+                <span class="scale-range">25 - 29.9</span>
+              </div>
+              <div class="scale-item">
+                <span class="scale-color obese"></span>
+                <span>Obese</span>
+                <span class="scale-range">≥ 30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>About Health Metrics</h2>
+            <p>Your trusted partner in health and wellness</p>
+          </div>
+          <div class="about-content">
+            <div class="about-text">
+              <p>
+                Health Metrics Pro provides professional health assessment tools
+                and personalized recommendations to help you achieve your
+                wellness goals. Our platform combines medical expertise with
+                cutting-edge technology to deliver accurate health insights.
+              </p>
+              <div class="features-grid">
+                <div class="feature-item">
+                  <i class="fas fa-chart-line"></i>
+                  <h3>Accurate Metrics</h3>
+                  <p>Professional-grade calculations and analysis</p>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-user-md"></i>
+                  <h3>Expert Insights</h3>
+                  <p>Backed by medical professionals</p>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-lock"></i>
+                  <h3>Secure & Private</h3>
+                  <p>Your data is always protected</p>
+                </div>
+              </div>
+            </div>
+            <div class="about-image">
+              <img
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                alt="Healthy Lifestyle"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="services-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Our Services</h2>
+            <p>Comprehensive health and wellness solutions</p>
+          </div>
+          <div class="services-grid">
+            <div class="service-card">
+              <i class="fas fa-weight"></i>
+              <h3>BMI Calculator</h3>
+              <p>Calculate your BMI and get personalized health insights</p>
+              <a href="#calculator" class="service-link">Calculate Now</a>
+            </div>
+            <div class="service-card">
+              <i class="fas fa-dumbbell"></i>
+              <h3>Fitness Planning</h3>
+              <p>Get expert advice on maintaining a healthy lifestyle</p>
+              <a href="#contact" class="service-link">Learn More</a>
+            </div>
+            <div class="service-card">
+              <i class="fas fa-apple-alt"></i>
+              <h3>Nutrition Guide</h3>
+              <p>Learn about balanced diet and healthy eating habits</p>
+              <a href="#contact" class="service-link">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section id="testimonials" class="testimonials-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>What Our Users Say</h2>
+            <p>Trusted by thousands of health-conscious individuals</p>
+          </div>
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <i class="fas fa-quote-left"></i>
+                <p>
+                  This platform helped me understand my health metrics better
+                  and make informed decisions about my lifestyle.
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <img
+                  src="https://randomuser.me/api/portraits/women/1.jpg"
+                  alt="Sarah Johnson"
+                />
+                <div class="author-info">
+                  <h4>Sarah Johnson</h4>
+                  <p>Fitness Enthusiast</p>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-content">
+                <i class="fas fa-quote-left"></i>
+                <p>
+                  The BMI calculator is incredibly accurate and the
+                  recommendations are spot on. Highly recommended!
+                </p>
+              </div>
+              <div class="testimonial-author">
+                <img
+                  src="https://randomuser.me/api/portraits/men/1.jpg"
+                  alt="Michael Chen"
+                />
+                <div class="author-info">
+                  <h4>Michael Chen</h4>
+                  <p>Health Coach</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="contact-section">
+        <div class="container">
+          <div class="section-header">
+            <h2>Contact Us</h2>
+            <p>Get in touch with our health experts</p>
+          </div>
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Us </h3>
+                <p> deltacodesolutions@gmail.com</p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <h3>Call Us</h3>
+                <p>+923200652258</p>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Visit Us</h3>
+                <p>242 westwood colony,Lahore</p>
+              </div>
+            </div>
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Your email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  placeholder="Subject"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  placeholder="Your message"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h3>Health Metrics Pro</h3>
+            <p>Your trusted partner in health and wellness</p>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/jawadjameel"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/jawadjameel"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/jawadjameel"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/jawadjameel"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#calculator">Calculator</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Newsletter</h3>
+            <p>Subscribe to our newsletter for health tips and updates</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Enter your email" />
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Health Metrics Pro. All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
